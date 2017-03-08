@@ -1,0 +1,99 @@
+<html ng-app='myApp'>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+		English premier League
+		</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/clean.css">
+		
+	</head>
+	<body>
+		<nav class="navbar-custom">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active">
+							<a href="#/rounds" id="RoundTab">Rounds</a>
+						</li>
+						<li><a href="#/stats" id="statsTab">Statistics</a>
+						</li>
+						<li><a href="#/teamStats" id="teamStatsTab">team stats</a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<header class="intro-header" >
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+						<div class="site-heading">
+							<h1>English Premier League</h1>
+							
+							
+						</div>
+						
+					</div>
+					
+				</div>
+			</header>
+			<!-- main content -->
+			<div class="view">
+				<div class="Rounds" ng-controller="roundController as roundCtrl">
+					<div class="heading text-center">
+						<h2>Round {{roundCtrl.Tab+1}}</h2>
+						<hr class="small">
+					</div>
+					<div class="rounds container">
+						<div class="row">
+							<div class="col-md-2 col-lg-2 col-sm-2">
+								<ul class="pager">
+									<li class="next">
+										<a ng-click="roundCtrl.prevRound()">previous</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-8 col-sm-8 col-lg-8 text-right">
+								<div class="roundsTable">
+									<div class="rounds"  ng-repeat="match in roundCtrl.matches">
+										<strong class="date text-right">{{match.date | date}}</strong>
+										<div class="teams text-left">{{match.team1.name}}</div>
+										<span id="score1" class="text-center" style="width: {{match.score1*100+100}};">{{match.score1}}</span><br>
+										<div class="teams text-left">{{match.team2.name}}</div>
+										<span id="score2" class="text-center" style="width:{{match.score2*100+100}};" >{{match.score2}}</span>
+										
+										
+									</div>
+								</div>
+								<div class="bar"></div>
+							</div>
+							<div class="col-md-2 col-lg-2 col-sm-2" >
+								<ul class="pager">
+									<li class="next">
+										<a ng-click="roundCtrl.nextRound()" >next</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"> -->
+			<script
+			src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous"></script>
+			<script  src="angular/angular.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+			<script src="angular/controllers/app.js"></script>
+			<!-- service -->
+			<script src="angular/services/api.js"></script>
+			<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+			<script src="angular/controllers/route.js"></script>-->
+		</body>
+	</html>

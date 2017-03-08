@@ -1,0 +1,118 @@
+#score1{
+  background-color: red;
+  float: left;
+  color: white;
+  
+}
+
+.heading h2{
+  color: white;
+  margin-top: 0px;
+}
+#score2{
+  background-color: blue;
+  float: left;
+ color: white;
+}
+.rounds{
+  margin-bottom: 10%;
+  background-color: #9cb770;
+}
+.teams{
+  font-family: sans-serif;
+  font-weight: 800;
+  color: white;
+}
+.intro-header {
+  background-color:#6403ea;
+  
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+ 
+}
+body {
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 20px;
+  color: #333333;
+}
+.navbar-custom {
+    background-color:#1b2750 ;
+    border-bottom: 1px solid transparent;
+     text-transform: uppercase;
+     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3; 
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+
+  }
+  nav a {
+    color: white;  	
+  }
+.site-heading{
+	color: white;
+	text-align: center;
+	padding: 150px 0;
+}
+.site-heading h1{
+	font-size: 56px;
+}
+ h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 800;
+}
+hr.small {
+    max-width: 100px;
+    margin: 15px auto;
+    border-width: 4px;
+    border-color: #fff;
+}
+.views{
+  background-color: #F07995;
+  padding: 150px 0;
+}
+.pager{
+  list-style: none;
+
+
+}
+.pager li a{
+  border-radius: 0;
+ font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  color: white;
+   background-color: #397249;
+   border: transparent;
+   font-weight: 200;
+   padding: 15px 25px;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+}
+.pager li>a:focus, .pager li>a:hover {
+    text-decoration: none;
+    color: white;
+    background-color:#a58e88;
+}
+.statsOfTeams{
+  background-color: #00ff87;
+  padding-top: 10%;
+}
+.goal {
+    position: relative;
+    left: 44%;
+}
+.score {
+    background-color: #23224b;
+    color: #fff;
+    font-size: 1.4em;
+    width: 8rem;
+}
+.btn {
+    background-color: #e90052;
+    color: white;
+}

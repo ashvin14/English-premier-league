@@ -1,0 +1,46 @@
+<div class="Rounds" ng-controller="roundCtrl as roundController">
+	<div class="heading text-center">
+		<h2>Round 1</h2>
+		<hr class="small">
+	</div>
+	<div class="rounds container">
+		<div class="row">
+			<div class="col-md-2 col-lg-2 col-sm-2">
+				<ul class="pager">
+					<li class="next">
+						<a href="" >previous</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-8 col-sm-8 col-lg-8 text-right">
+				<div class="roundsTable">
+					<div class="rounds">
+						<strong class="date text-right">Date</strong>
+						<div class="teams text-left">MANUTD</div>
+						<span id="score1" class="text-center">3</span><br>
+						<script type="text/javascript">
+							var score1=parseInt(document.getElementById("score1").innerHTML);
+							document.getElementById("score1").style.width=(score1+1)*100;
+						</script>
+						<div class="teams text-left">CHELSEA</div>
+						<span id="score2" class="text-center">1</span>
+						<script type="text/javascript">
+							var score2=parseInt(document.getElementById("score2").innerHTML);
+							document.getElementById("score2").style.width=(score2+1)*100;
+						</script>
+						
+					</div>
+				</div>
+				<div class="bar"></div>
+			</div>
+			<div class="col-md-2 col-lg-2 col-sm-2" >
+				<ul class="pager">
+					<li class="next">
+						<a href="" >next</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+</div>
