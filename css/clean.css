@@ -4,7 +4,10 @@
   color: white;
   
 }
-
+.heading{
+  margin-top: 10%;
+ 
+}
 .heading h2{
   color: white;
   margin-top: 0px;
@@ -17,6 +20,7 @@
 .rounds{
   margin-bottom: 10%;
   background-color: #9cb770;
+   padding-top: 1%;
 }
 .teams{
   font-family: sans-serif;
