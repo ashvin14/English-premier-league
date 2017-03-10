@@ -1,15 +1,19 @@
-myApp.config(['$routeProvider',function($routeProvider){
-	$routeProvider
-	.when('/',{
-		templateUrl:'index.html'
+$(".Rounds").show();//change it to show afterwards
+$(".teamStats").hide();
+$("#RoundTab").click(function(){
+	$(".teamStats").hide();
+	$(".Rounds").show();
 
-	})
-	.when('/rounds',{
-		templateUrl:'views/round.html',
-		controller:'roundController',
-		controllerAs:'roundCtrl'
-	})
-	.otherwise({
-		template:'<h2>NOT FOUND</h2>'
-	})
-}])
+
+})
+$("#statsTab").click(function(){
+	$(".Rounds").hide();
+	//complete this function here
+
+})
+
+$("#teamStatsTab").click(function(){
+		$(".Rounds").hide();
+		$(".teamStats").show();
+	//complete this function here
+})

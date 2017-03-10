@@ -14,7 +14,7 @@ loadHTTP();
 if(main.Tab>body.length)main.Tab=0;
 }
 this.prevRound=function(){
-	if(main.Tab<0)main.Tab=0;
+	if(main.Tab<=0)main.Tab=1;
 	loadHTTP();
 main.Tab--;
 }
@@ -41,9 +41,71 @@ main.matches=main.rounds[main.Tab].matches;
 
 
 },function failure(response){
-alert("some error has occured while loading API")
+	alert("Some error has occured while loading API")
 })
 }
 loadHTTP();
+
+}])
+myApp.controller('teamController',['apiService',function(apiService){
+var main=this;
+	this.teamScore=0;
+	var baseUrl='https://raw.githubusercontent.com/openfootball/football.json/master';
+	this.winMatches=0;
+	this.lostMatches=0;
+	this.tieMatches=0;
+	
+	function getTotalStats(Team){
+	
+		var score=matchWin=lostMatch=tieMatch=0;
+		for(var index in team){
+			$.each(team[index].matches,function(i,v){
+				
+				if(v.team1.name==Team ){
+					
+					score=score+v.score1;
+					if(v.score1<v.score2)
+						
+						lostMatch=lostMatch+1;
+					
+					else if(v.score1 == v.score2)
+							tieMatch++;
+						else
+							matchWin++;
+
+				
+				}
+
+				else if(v.team2.name==Team){
+					score=score+v.score2;
+					if(v.score1<v.score2)
+						matchWin++;
+					
+					else if(v.score2 == v.score1)
+							tieMatch++;
+						else
+							lostMatch++;
+					
+				}
+			})
+		}
+		main.teamScore=score;
+		main.winMatches=matchWin;
+		main.lostMatches=lostMatch;
+		main.tieMatches=tieMatch;
+	}
+		
+	apiService.getAllInfo().then(function callback(response){
+	
+			team=response.data.rounds;
+			
+		},function failure(){
+			alert("Some error has occured while loading API")
+		})
+	
+	this.getTeamScore=function(team){
+		getTotalStats(team);
+		
+	}
 
 }])

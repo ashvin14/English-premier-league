@@ -19,7 +19,7 @@
 }
 .rounds{
   margin-bottom: 10%;
-  background-color: #9cb770;
+  background-color: #00ff87;
    padding-top: 1%;
 }
 .teams{
@@ -120,3 +120,30 @@ hr.small {
     background-color: #e90052;
     color: white;
 }
+.teamStats{
+  background-color: #00ff87;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  padding-top: 5%;
+}
+.totalGoals {
+    color: white;
+    font-family: PremierSans-Bold,Arial,Helvetica Neue,Helvetica,sans-serif;
+    position: relative;
+    top: 1.5em;
+    left: 30%;
+    font-weight: 700;
+
+}
+.score {
+    background-color: #23224b;
+    color: #fff;
+    font-size: 1.4em;
+    width: 8rem;
+    position: relative;
+    left: 57%;
+}
+.input-group-addon {
+    background-color: #e90052;
+    color: #fff;
+}
+ 
