@@ -120,7 +120,7 @@ hr.small {
     background-color: #e90052;
     color: white;
 }
-.teamStats{
+.teamStats,.singleMatchDetails{
   background-color: #00ff87;
   font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
   padding-top: 5%;
@@ -146,4 +146,3 @@ hr.small {
     background-color: #e90052;
     color: #fff;
 }
- 

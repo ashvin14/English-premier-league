@@ -153,7 +153,78 @@
 				</div>
 				
 			</div>
+			
 		</div>
+		<!--end of second view-->
+		<div class="singleMatchDetails jumbotron" ng-controller="getInfo as infoCtrl">
+			<div class="container">
+				<h3 >GET DETAIL OF MATCH</h3>
+						<div class="row">
+							<div class="col-md-3 col-xs-6">
+								<div class="dropdown">
+									<button class="btn  dropdown-toggle" type="button" data-toggle="dropdown" ng-click="infoCtrl.getRounds()">{{infoCtrl.round}}
+									<span class="caret"></span></button>
+									<ul class="dropdown-menu" >
+										<li ng-repeat="Round in infoCtrl.rounds track by $index " ng-click="infoCtrl.round=Round"><a href="#">{{Round}}</a></li>
+									</ul>
+									
+								</div>
+							</div>
+							<div class="col-md-4 col-xs-6">
+								<div class="dropdown">
+									<button class="btn  dropdown-toggle" type="button" data-toggle="dropdown" ng-click="infoCtrl.getTeam1(infoCtrl.round)">{{infoCtrl.team1}}
+									<span class="caret"></span></button>
+									<ul class="dropdown-menu" >
+										<li ng-repeat="team in infoCtrl.teams track by $index" ng-click="infoCtrl.team1=team"><a href="#">{{team}}</a></li>
+									</ul>
+									
+								</div>
+								
+								
+							</div>
+							<div class="col-md-4 col-xs-6">
+								<div class="dropdown">
+									<button class="btn  dropdown-toggle" type="button" data-toggle="dropdown" ng-click="infoCtrl.getTeam2(infoCtrl.round,infoCtrl.team1)">{{infoCtrl.team2}}
+									<span class="caret"></span></button>
+									<ul class="dropdown-menu" >
+										<li ng-repeat="team in infoCtrl.teams1 track by $index" ng-click="infoCtrl.team2=team"><a href="#">{{team}}</a></li>
+									</ul>
+									
+								</div>
+							</div>
+							<button class="btn col-md-1" ng-click="infoCtrl.getInfo(infoCtrl.round,infoCtrl.team1,infoCtrl.team2)">GET</button>
+						</div>
+						<div class="row">
+							<table class="table table-boredered">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>{{infoCtrl.match.team1.name}}</th>
+										<th>{{infoCtrl.match.team2.name}}</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">Goals</th>
+										<td>{{infoCtrl.match.score1}}</td>
+										<td>{{infoCtrl.match.score2}}</td>
+									</tr>
+									<tr>
+										<th scope="row">Date</th>
+										<td>{{infoCtrl.match.date}}</td>
+										
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						
+					</div>
+				</div>
+		</div>
+		
+		
+		
 		<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"> -->
 		<script
 		src="https://code.jquery.com/jquery-3.1.1.min.js"
